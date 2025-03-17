@@ -111,26 +111,7 @@ Se realizaron tres consultas con y sin índices, evaluando el tiempo de ejecuci�
 
 ### **Conclusiones**
 
-### Reducción en el Número de Documentos Examinados:
-
-- **Sin índices:**  
-  Cada consulta examinó aproximadamente **50,000 documentos**, lo que significaba un trabajo considerable para el motor de consulta.
-
-- **Con índices:**  
-  La primera consulta, con índices, solo examinó **2,482 documentos**, reduciendo de manera notable el esfuerzo del motor de consulta y mejorando la velocidad de la operación.
-
-### Aumento en el Uso de Claves Examinadas:
-
-- **Sin índices:**  
-  El valor de `totalKeysExamined` era **0**, lo que indica que MongoDB realizaba un escaneo completo de la colección sin aprovechar ningún índice.
-
-- **Con índices:**  
-  Las consultas utilizaron índices, lo que redujo la necesidad de un escaneo completo de los documentos y permitió un acceso más eficiente a los datos.
-
-### Caso Particular del Segundo Índice:
-
-En el caso de la **segunda consulta con índices**, se examinaron **50,000 claves** y **500,000 documentos**. Esto sugiere que el índice utilizado no fue **óptimo** para esta consulta en particular, ya que a pesar de que se utilizó un índice, la eficiencia no fue tan alta como se esperaba.
-
+El uso de índices en MongoDB tuvo un impacto significativo en la eficiencia de las consultas. Sin índices, cada consulta examinó aproximadamente 50,000 documentos, lo que representaba una carga considerable para el motor de consulta. En contraste, con índices, la primera consulta solo examinó 2,482 documentos, reduciendo drásticamente el esfuerzo requerido y mejorando la velocidad y se logró un acceso más eficiente a los datos. Sin embargo, en el caso de la segunda consulta con índices, se examinaron 50,000 claves y 500,000 documentos, lo que evidencia que el índice utilizado no fue óptimo, ya que su eficiencia no alcanzó el nivel esperado. Esto se puede mejorar optimizando en un futuro los indices y saber cuando y cuando no usar los indices ya que estos en ves de mejorar relentizaran la consulta y no se lograra el objetivo el cual es la eficiencia de esta. Cabe recalcar que para ejemplos practicos dejamos asi ese indice para demostrar que debemos aprender a usar nuestros indices. 
 
 ## Tecnologías Utilizadas
 - Node.js
