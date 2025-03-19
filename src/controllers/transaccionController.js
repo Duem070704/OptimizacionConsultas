@@ -7,7 +7,7 @@ const crearIndices = async (req, res) => {
 
     // Crear los índices 
     await transaccionIndex.createIndex({ fecha_transaccion: 1 });    
-    await transaccionIndex.createIndex({ monto: 1, categoria: 1 });  
+    await transaccionIndex.createIndex({ categoria: 1, monto: 1 }); 
     await transaccionIndex.createIndex({ descuento_aplicado: 1, metodo_pago: 1, estado_transaccion: 1 }); 
     await transaccionIndex.createIndex({ fecha_transaccion: -1 });  
     await transaccionIndex.createIndex({ codigo_producto: 1 });     

@@ -90,6 +90,9 @@ Consulta 1.
 Consulta 2.
 ![Consulta2](/assets/conIndices/2.png)
 
+Consulta 2 con la consulta ejecutada varias veces.
+![Consulta2](/assets/conIndices/Conuslta%202ejecutada.png)
+
 Consulta 3.
 ![Consulta3](/assets/conIndices/3.png)
 
@@ -109,9 +112,21 @@ Se realizaron tres consultas con y sin índices, evaluando el tiempo de ejecuci�
 2. `executionTimeMillis`: **109ms**, `totalKeysExamined`: **50,000**, `totalDocsExamined`: **500,000**
 3. `executionTimeMillis`: **8ms**, `totalKeysExamined`: **0**, `totalDocsExamined`: **0**
 
-### **Conclusiones**
+### **Análisis**
+El uso de índices en MongoDB tuvo un impacto significativo en la eficiencia de las consultas. Sin índices, cada consulta examinó aproximadamente 50,000 documentos, lo que representaba una carga considerable para el motor de consulta. En contraste, con índices, la primera consulta solo examinó 2,482 documentos, reduciendo drásticamente el esfuerzo requerido y mejorando la velocidad y se logró un acceso más eficiente a los datos. Sin embargo, en el caso de la segunda consulta con índices, se examinaron 50,000 claves y 500,000 documentos, lo que evidencia que el índice utilizado no fue óptimo, ya que su eficiencia no alcanzó el nivel esperado. Aunque luego de varias consultas con el indice creado se logro disminuir el tiempo de ejecucion. Esto se puede mejorar optimizando en un futuro los indices y saber cuando y cuando no usar los indices ya que estos en ves de mejorar relentizaran la consulta y no se lograra el objetivo el cual es la eficiencia de esta. 
 
+<<<<<<< HEAD
 El uso de índices en MongoDB tuvo un impacto significativo en la eficiencia de las consultas. Sin índices, cada consulta examinó aproximadamente 50,000 documentos, lo que representaba una carga considerable para el motor de consulta. En contraste, con índices, la primera consulta solo examinó 2,482 documentos, reduciendo drásticamente el esfuerzo requerido y mejorando la velocidad y se logró un acceso más eficiente a los datos. Sin embargo, en el caso de la segunda consulta con índices, se examinaron 50,000 claves y 500,000 documentos, lo que evidencia que el índice utilizado no fue óptimo, ya que su eficiencia no alcanzó el nivel esperado. Esto se puede mejorar optimizando en un futuro los indices y saber cuando y cuando no usar los indices ya que estos en ves de mejorar relentizaran la consulta y no se lograra el objetivo el cual es la eficiencia de esta. Cabe recalcar que para ejemplos practicos dejamos asi ese indice para demostrar que debemos aprender a usar nuestros indices. 
+=======
+### **Conclusión sobre el uso de índices en MongoDB**
+
+El uso de índices en MongoDB tuvo un impacto significativo en la eficiencia de las consultas. Sin índices, cada consulta examinó aproximadamente 50,000 documentos, lo que representaba una carga considerable para el motor de consulta. En contraste, con índices, la primera consulta solo examinó 2,482 documentos, reduciendo drásticamente el esfuerzo requerido y mejorando la velocidad. 
+
+Sin embargo, en el caso de la segunda consulta con índices, se examinaron 50,000 claves y 500,000 documentos, lo que evidencia que el índice utilizado no fue óptimo, ya que su eficiencia no alcanzó el nivel esperado. Esto resalta la importancia de optimizar los índices y saber cuándo usarlos, ya que un índice mal diseñado puede ralentizar en lugar de mejorar una consulta.
+
+Como conclusión, debemos ser prudentes al utilizar índices en MongoDB. Es recomendable realizar varias pruebas y analizar su impacto en el rendimiento antes de decidir si realmente mejoran la eficiencia de nuestra base de datos.
+
+>>>>>>> 9b83ab2 (actualizacion)
 
 ## Tecnologías Utilizadas
 - Node.js
